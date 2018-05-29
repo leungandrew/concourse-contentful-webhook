@@ -44,7 +44,7 @@ Run in interactive mode `docker run -i -t <DOCKER-IMAGE-ID> /bin/ash` then from 
 
 # Setting up local concourse
 
-Don't do this!  Tried to run locally but Darwin worker is an issue with `git`.
+Don't do this!  Tried to run locally but Darwin worker has an issue with `git` (because Darwin does not have the `git` resource baked into the binary)
 
 ```
 pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start
@@ -87,7 +87,7 @@ sudo concourse worker \
   --tsa-worker-private-key worker_key
 ```
 
-# Implemtnation
+# Implementation
 
 `/api/v1/teams/main/pipelines/[PIPELINE-NAME]/resources/[RESOURCE-NAME]/check/webhook?webhook_token=[RANDOM-TOKEN]`
 
